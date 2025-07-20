@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Advisory - SmartFarm</title>
+    <style>
+        body {
+            background-image: url("/static/general_bg.jpg");
+            background-size: cover;
+            font-family: Arial;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .form-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        select, input {
+            padding: 12px;
+            width: 250px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h2>Crop Weather Advisor</h2>
+        <form method="POST" action="/result">
+            <select name="location" required>
+                <option value="">--Select District--</option>
+                {% for district in districts %}
+                <option value="{{ district|lower }}">{{ district }}</option>
+                {% endfor %}
+            </select><br><br>
+            <select name="crop" required>
+                <option value="">--Select Crop--</option>
+                <option value="rice">Rice</option>
+                <option value="wheat">Wheat</option>
+                <option value="ragi">Ragi</option>
+            </select><br><br>
+            <button type="submit">Check Conditions</button>
+        </form>
+        <br>
+        <a href="/logout" style="color: lightgreen;">Logout</a>
+    </div>
+</body>
+</html>

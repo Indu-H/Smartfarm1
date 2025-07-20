@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - SmartFarm</title>
+    <style>
+        body {
+            background-image: url("/static/login_bg.jpg");
+            background-size: cover;
+            font-family: Arial;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        input {
+            padding: 12px;
+            width: 250px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Username" required><br><br>
+            <input type="password" name="password" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

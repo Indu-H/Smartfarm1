@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results - SmartFarm</title>
+    <style>
+        body {
+            background-image: url("/static/{{ crop }}.jpg");
+            background-size: cover;
+            font-family: Arial;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .result-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Weather Conditions for {{ city }}</h2>
+        <p><strong>Crop:</strong> {{ crop }}</p>
+        <p><strong>Temperature:</strong> {{ temp }} °C</p>
+        <p><strong>Humidity:</strong> {{ humidity }}%</p>
+        <p><strong>Rainfall (last hour):</strong> {{ rainfall }} mm</p>
+        <p><strong>Recommendation:</strong> {{ message }}</p>
+        <br>
+        <a href="/form" style="color: lightblue;">Check Another</a> |
+        <a href="/logout" style="color: lightgreen;">Logout</a>
+    </div>
+</body>
+</html>
